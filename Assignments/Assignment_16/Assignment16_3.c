@@ -1,0 +1,53 @@
+
+///////////////////////////////////////////////////////////////////////////
+// Function Name : Pattern
+// Input         : Integer, Integer
+// Output        : None
+// Description   : Displays the same alphabet in each respective row
+// Date          : 09/11/2026
+// Author        : Siddesh Sunil Choudhari
+///////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+void Pattern(int iRow, int iCol)
+{
+    int i = 0, j = 0;
+
+    for(i = 1; i <= iRow; i++)
+    {
+        for(j = 1; j <= iCol; j++)
+        {
+            printf("%c\t", 'A' + i - 1);
+        }
+
+        printf("\n");
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////
+// Function Name : main
+// Input         : None
+// Output        : Integer
+// Description   : Accepts rows and columns and calls Pattern function
+// Date          : 09/11/2026
+// Author        : Siddesh Sunil Choudhari
+///////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    int iValue1 = 0, iValue2 = 0;
+
+    printf("Enter number of rows and columns : ");
+    scanf("%d %d", &iValue1, &iValue2);
+
+    if((iValue1 <= 0) || (iValue2 <= 0))
+    {
+        printf("Invalid input\n");
+        return -1;
+    }
+
+    Pattern(iValue1, iValue2);
+
+    return 0;
+}
