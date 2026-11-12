@@ -1,0 +1,70 @@
+///////////////////////////////////////////////////////////////////////////
+// Function Name : StrRevX
+// Input         : String
+// Output        : Void
+// Description   : Reverses a string in place
+// Date          : 10/11/2026
+// Author        : Siddesh Sunil Choudhari
+///////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+///////////////////////////////////////////////////////////////////////////
+//
+// Function Name : StrRevX
+// Input         : String
+// Output        : Void
+// Description   : Reverses the given string without using another string
+//
+///////////////////////////////////////////////////////////////////////////
+
+void StrRevX(char *str)
+{
+    char *pStart = str;
+    char *pEnd = str;
+    char temp;
+
+    while(*pEnd != '\0')
+    {
+        pEnd++;
+    }
+
+    pEnd--;
+
+    while(pStart < pEnd)
+    {
+        temp = *pStart;
+        *pStart = *pEnd;
+        *pEnd = temp;
+
+        pStart++;
+        pEnd--;
+    }
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+// Entry Point Function
+//
+///////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+    char arr[20];
+
+    printf("Enter string:\n");
+    scanf(" %19[^\n]", arr);
+
+    StrRevX(arr);
+
+    printf("Modified string is %s\n", arr);
+
+    return 0;
+}
+
+///////////////////////////////////////////////////////////////////////////
+//
+// Input  : abcd
+// Output : dcba
+//
+///////////////////////////////////////////////////////////////////////////
